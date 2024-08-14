@@ -176,7 +176,11 @@ def makeK2db(args):
         k2build_line = f"kraken2-build --add-to-library {fasta_path} --db ."
         stdout, stderr = command(k2build_line, "KRAKEN2-BUILD").run_comm_quiet(1, args.stdout, args.stderr)
 
-    k2build_line = "kraken2-build --skip-maps --db . --download-taxonomy"
+    use_ftp = ""
+    if(args.use_ftp):
+        use_ftp = "--use-ftp"
+
+    k2build_line = "kraken2-build --skip-maps --db . --download-taxonomy {use_ftp}"
     stdout, stderr = command(k2build_line, "KRAKEN2-BUILD").run_comm(1, args.stdout, args.stderr)
 
     ## move new ncbi taxonomy database taxdump files to the kraken2 taxonomy directory

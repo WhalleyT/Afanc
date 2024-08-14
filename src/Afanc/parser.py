@@ -102,6 +102,11 @@ parser_getDataset.add_argument('-o', '--output_prefix',
     action='store',
     help='Output prefix for this run. Default=assemblies.')
 
+parser_getDataset.add_argument('-f', "--use_ftp",
+    action="store_true",
+    default=False,
+    help="Flag. Use ftp instead of https/rsync when downloading, Default=False")
+
 
 parser_getDataset.set_defaults(func=run_subtool)
 
@@ -133,6 +138,11 @@ parser_autodb.add_argument('-m', '--mode_range',
     default=0.1,
     action='store',
     help='Range to take around the mode of the average mash distance. Default=0.1.')
+
+parser_autodb.add_argument('-f', "--use_ftp",
+    action="store_true",
+    default=False,
+    help="Flag. Use ftp instead of https/rsync when downloading, Default=False")
 
 # parser_autodb.add_argument('-d', '--stdev',
 #     type=float,

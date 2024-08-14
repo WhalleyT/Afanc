@@ -2,7 +2,7 @@ from os import path, mkdir, chdir
 from Afanc.utilities.runCommands import command
 
 
-def getTaxonomy(args, ncbiDate):
+def getTaxonomy(args, ncbiDate, useFTP):
     """
     Download the NCBI taxonomy, identified using args.ncbiDate
 
@@ -14,7 +14,11 @@ def getTaxonomy(args, ncbiDate):
         nodes <str> : nodes.dmp path
     """
 
-    taxonomy_ftp_path = f"ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_{ncbiDate}.zip"
+    prefix = "https"
+    if args.use_ftp:
+        prefix = "ftp"
+
+    taxonomy_ftp_path = f"{prefix}://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_{ncbiDate}.zip"
 
     get_taxonomy_runline = f"wget {taxonomy_ftp_path} ; unzip -o taxdmp_{ncbiDate}.zip"
     stdout, stderr = command(get_taxonomy_runline, "GET_TAXONOMY").run_comm(1, args.stdout, args.stderr)
