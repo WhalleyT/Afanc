@@ -11,5 +11,5 @@ dependencies:
   - blast
   - mash==2.3
   - entrez-direct
-    #pip:
-    #    git+https://github.com/arthurvm/afanc.git
+  pip:
+        git+https://github.com/arthurvm/afanc.git

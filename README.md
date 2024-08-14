@@ -18,6 +18,10 @@ Installation is quick and easy, simply run
   pip3 install ./
 ```
 
+Alternatively, install through conda using:
+
+```conda env create -f environment.yml```
+
 ## Description
 
 ### Sub-Modules
