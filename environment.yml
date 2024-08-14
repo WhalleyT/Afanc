@@ -1,0 +1,15 @@
+name: afanc
+channels:
+  - bioconda
+  - base
+  - conda-forge
+dependencies:
+  - bowtie
+  - kraken2==2.1.2
+  - krona
+  - python==3.7
+  - blast
+  - mash==2.3
+  - entrez-direct
+    #pip:
+    #    git+https://github.com/arthurvm/afanc.git
