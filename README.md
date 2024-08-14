@@ -1,4 +1,4 @@
-# Afanc: High Resolution Metagenomic Deconvoluter
+i Afanc: High Resolution Metagenomic Deconvoluter
 
 | | |
 | --- | --- |
@@ -132,7 +132,7 @@ Install instructions for ncbi datasets can be found at https://www.ncbi.nlm.nih.
 ```
   wget https://github.com/marbl/Mash/releases/download/v2.3/mash-Linux64-v2.3.tar \
   tar -xf mash-Linux64-v2.3.tar \
-  mv mash-Linux64-v2.3/mash /usr/local/bin \
+  mv mash-Linux64-v2.3/mash /usr/local/bin
 ```
 
 ### ncbi-blast+
